@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
 import { observer } from "mobx-react-lite";
-function Home({ store }) {
+import UserData from "../UserData";
+function Home() {
   useEffect(() => {
-    console.log(store);
-    console.log(store.user);
+    console.log(UserData);
+    console.log(UserData.user);
   });
   function hdlchange(){
-    store.updateUser("Alex");
+    UserData.updateUser("Alex");
   }
   function hdlsubject(){
-    store.addSubject("chemestry");
+    UserData.addSubject("chemestry");
   }
   return (
     <>
       <div>Home</div>
-      <div>{store.user.name}</div>
-      <div>{store.user.subject.map((data)=><div>{data}</div>)}</div>
+      <div>{UserData.user.name}</div>
+      <div>{UserData.user.subject.map((data)=><div>{data}</div>)}</div>
       <button onClick={hdlchange}>Change User</button>
       <button onClick={hdlsubject}>Add Subject</button>
     </>
