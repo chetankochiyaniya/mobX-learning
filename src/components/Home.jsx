@@ -15,6 +15,7 @@ function Home({ store }) {
     <>
       <div>Home</div>
       <div>{store.user.name}</div>
+      <div>{store.user.subject.map((data)=><div>{data}</div>)}</div>
       <button onClick={hdlchange}>Change User</button>
       <button onClick={hdlsubject}>Add Subject</button>
     </>
